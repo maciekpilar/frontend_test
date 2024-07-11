@@ -1,0 +1,49 @@
+.navbar {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px;
+  align-items: center;
+  background-color: black;
+
+  @media screen and (min-width: 680px) {
+    padding: 16px 30px;
+  }
+
+  .navbar__logo {
+    .navbar__logo_image {
+      filter: grayscale(1);
+      transition: all ease-in-out 300ms;
+
+      &:hover {
+        cursor: pointer;
+        filter: grayscale(0);
+      }
+    }
+  }
+
+  .navbar__content {
+    font-size: 1.2rem;
+    text-align: right;
+
+    @media screen and (min-width: 680px) {
+      font-size: 1.4rem;
+    }
+
+    .navbar__content_title {
+      display: flex;
+      gap: 0.5rem;
+      font-weight: 200;
+
+      .navbar__content_title-span {
+        font-weight: 600;
+      }
+    }
+
+    .navbar__content_sign {
+      // display: none;
+      font-weight: 100;
+    }
+  }
+}
