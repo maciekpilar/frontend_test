@@ -1,3 +1,6 @@
+@import "./breakpoints";
+@import "./colors";
+
 .navbar {
   width: 100%;
   display: flex;
@@ -5,9 +8,9 @@
   width: 100%;
   padding: 16px;
   align-items: center;
-  background-color: black;
+  background-color: $black;
 
-  @media screen and (min-width: 680px) {
+  @media screen and (min-width: $tablet) {
     padding: 16px 30px;
   }
 
@@ -27,7 +30,7 @@
     font-size: 1.2rem;
     text-align: right;
 
-    @media screen and (min-width: 680px) {
+    @media screen and (min-width: $tablet) {
       font-size: 1.4rem;
     }
 
@@ -42,8 +45,11 @@
     }
 
     .navbar__content_sign {
-      // display: none;
       font-weight: 100;
+    }
+
+    .navbar__content_sign-disabled {
+      display: none;
     }
   }
 }

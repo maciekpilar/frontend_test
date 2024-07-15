@@ -5,7 +5,7 @@ import "../../styles/navbar.scss";
 import Link from "next/link";
 
 const Navbar = () => {
-  const isName = false;
+  const isName = true;
   return (
     <nav className="navbar">
       <div className="navbar__logo">
@@ -28,11 +28,12 @@ const Navbar = () => {
           Zadanie{" "}
           <span className="navbar__content_title-span">rekrutacyjne</span>
         </p>
-        {isName ? (
-          <p className="navbar__content_sign">Maciej Pilarski</p>
-        ) : (
-          <></>
-        )}
+        <p
+          id="sign"
+          className="navbar__content_sign navbar__content_sign-disabled"
+        >
+          Maciej Pilarski
+        </p>
       </div>
     </nav>
   );

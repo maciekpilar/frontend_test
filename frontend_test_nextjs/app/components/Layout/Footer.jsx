@@ -1,10 +1,23 @@
 "use client";
+
 import React, { useState } from "react";
 
 import "../../styles/footer.scss";
 
 const Footer = () => {
   const [isModal, setIsModal] = useState(false);
+
+  const resetPage = () => {
+    window.location.reload();
+  };
+
+  const toggleDisabledClass = () => {
+    const element = document.getElementById("sign");
+    if (element) {
+      element.classList.toggle("navbar__content_sign-disabled");
+    }
+  };
+
   return (
     <footer className="footer">
       <div className="footer__logo">
@@ -25,16 +38,21 @@ const Footer = () => {
         <div className="footer__copy_divider" />
       </div>
       <div className="footer__action">
-        {isModal && (
-          <div className="footer__action_modal">
-            <div className="footer__action_modal-option">
-              {">"} ZRESETUJ USTAWIENIA
-            </div>
-            <div className="footer__action_modal-option">
-              {">"} POKAŻ DANE OSOBOWE
-            </div>
+        <div
+          className={`footer__action_modal ${
+            isModal ? "footer__action_modal--visible" : ""
+          }`}
+        >
+          <div onClick={resetPage} className="footer__action_modal-option">
+            {">"} ZRESETUJ USTAWIENIA
           </div>
-        )}
+          <div
+            onClick={toggleDisabledClass}
+            className="footer__action_modal-option"
+          >
+            {">"} POKAŻ DANE OSOBOWE
+          </div>
+        </div>
         <button
           className="footer__action_button"
           onClick={() => setIsModal(!isModal)}
