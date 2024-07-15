@@ -5,6 +5,7 @@
 Niżej opisane zadanie zostało wykonane przy pomocy Next.js (framework JS) oraz style SCSS (SASS - preprocesor dla CSS).
 - Next.js
 - SCSS
+https://test-maciej-pilarski.netlify.app/
 
 ### Główne warunki (KOMPLET):
 
@@ -24,7 +25,7 @@ Udało się spełnić 3 główne warunki zadania opisane niżej. (Breakpoint dod
 - Alfabetyczne sortowanie doklejanych elementów
 - Wyświetlanie alertu przy braku opcji spełnienia warunku doklejania (lub już wklejonego tam komponentu),
 - Button w footerze wysuwa ramkę bez JSa,
-- Praca wrzucona do netlify jako prezentacja wyników pod linkiem:
+- Praca wrzucona do netlify jako prezentacja wyników pod linkiem: https://test-maciej-pilarski.netlify.app/
 
 ### Zadanie na 6 (nie wykonane):
 Zadanie nie zostało wykonane niestety z braku czasu (od piątku byłem na wyjeździe służbowym stąd miałem jakieś 5h na wykonanie zadania).
