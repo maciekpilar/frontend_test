@@ -1,0 +1,211 @@
+@import "./breakpoints";
+@import "./colors";
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: $gray-dark;
+  min-height: calc(100vh - 218px);
+  color: $white;
+  padding: 0;
+
+  @media screen and (min-width: $tablet) {
+    padding: 8px;
+  }
+
+  .page__hero {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 400;
+    margin-top: 1rem;
+    text-shadow: 4px 4px 4px $black;
+
+    @media screen and (min-width: $tablet) {
+      font-size: 2.5rem;
+      margin-top: 3rem;
+    }
+  }
+
+  .page__hero_divider {
+    align-self: center;
+    height: 1px;
+    background-color: $white;
+    width: 10rem;
+
+    @media screen and (min-width: $tablet) {
+      margin: 12px;
+      width: 12rem;
+    }
+  }
+
+  .page__content_box {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    width: 100%;
+    margin-top: 20px;
+
+    @media screen and (min-width: $tablet) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto;
+      gap: 20px;
+    }
+
+    h2 {
+      font-size: 1rem;
+      text-wrap: nowrap;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+
+      @media screen and (min-width: $tablet) {
+        margin-bottom: 2rem;
+      }
+    }
+
+    .page__content_column {
+      padding: 20px;
+    }
+
+    .item1 {
+      grid-column: 1;
+      grid-row: 1;
+      text-align: left;
+
+      @media screen and (min-width: $tablet) {
+        div {
+          display: flex;
+          align-items: center;
+        }
+
+        h2 {
+          text-align: center;
+        }
+      }
+    }
+
+    .item2 {
+      grid-column: 2;
+      grid-row: 1;
+      text-align: right;
+
+      @media screen and (min-width: $tablet) {
+        div {
+          display: flex;
+          justify-content: center;
+          flex-direction: row;
+        }
+
+        h2 {
+          text-align: center;
+        }
+      }
+    }
+
+    .item3 {
+      grid-column: 1 / span 2;
+      grid-row: 2;
+      text-align: center;
+      color: $gray-light;
+      font-weight: 300;
+
+      h2 {
+        overflow: hidden;
+        text-overflow: ellipsis !important;
+        color: $white;
+      }
+
+      @media screen and (min-width: $tablet) {
+        grid-column: 3;
+        grid-row: 1;
+      }
+    }
+
+    .page__content_button {
+      font-size: 1.2rem;
+      font-family: inherit;
+      width: 100%;
+      padding: 8px 0;
+      background-color: transparent;
+      color: $gray-light;
+      border: 1px solid $white;
+      border-radius: 4px;
+      text-transform: uppercase;
+      transition: all ease-in-out 150ms;
+
+      &:first-of-type {
+        margin-bottom: 12px;
+      }
+
+      @media screen and (min-width: $tablet) {
+        padding: 8px 30px;
+        width: 10rem;
+
+        &:first-of-type {
+          margin-bottom: 0;
+          margin-right: 12px;
+        }
+      }
+
+      &:hover {
+        background-color: $orange;
+        color: $white;
+        cursor: pointer;
+      }
+    }
+
+    .disabled {
+      color: $gray-light;
+      border-color: $gray-light;
+      cursor: not-allowed;
+
+      &:hover {
+        color: $gray-light;
+        background-color: transparent;
+        border-color: $gray-light;
+      }
+    }
+  }
+}
+
+// Input styles
+input[type="radio"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  border: 4px solid $white;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+
+  &:checked {
+    position: relative;
+
+    &:after {
+      content: "";
+      display: block;
+      width: 14px;
+      height: 14px;
+      margin: auto;
+      background-color: $white;
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+label {
+  color: $gray-light;
+  margin-left: 18px;
+  text-wrap: nowrap;
+  cursor: pointer;
+}
+
+input[type="radio"]:checked ~ label {
+  color: $white;
+}
